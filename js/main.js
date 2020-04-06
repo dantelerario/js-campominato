@@ -10,10 +10,23 @@
 // con difficoltà 2=> tra 1 e 50
 
 var array16 = [];
+var numUser = [];
+var arrayUser = [];
 
 for (var i = 0; i < 16; i++) {
   var numRandom = Math.floor( Math.random() * 100) + 1;
   array16.push(numRandom);
 }
-
 console.log(array16);
+
+for (var i = 0; i < 10; i++) {
+  numUser = parseInt( prompt('Inserisci un numero'));
+  if (arrayUser.includes(numUser)) {
+    alert('Non puoi inserire lo stesso numero');
+    i--;
+  } else {
+    arrayUser.push(numUser);
+  }
+
+}
+console.log(arrayUser);
