@@ -12,6 +12,7 @@
 var array16 = [];
 var numUser = [];
 var arrayUser = [];
+var score = 0;
 
 for (var i = 0; i < 16; i++) {
   var numRandom = Math.floor( Math.random() * 100) + 1;
@@ -19,14 +20,22 @@ for (var i = 0; i < 16; i++) {
 }
 console.log(array16);
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 5; i++) {
   numUser = parseInt( prompt('Inserisci un numero'));
-  if (arrayUser.includes(numUser)) {
+  if (numUser < 1 || numUser > 100) {
+    alert('Non puoi inserire un numero maggiore di 100 o minore di 1');
+    i--;
+  } else if (arrayUser.includes(numUser)) {
     alert('Non puoi inserire lo stesso numero');
     i--;
+  } else if (array16.includes(numUser)) {
+    alert('Hai perso');
+    break;
   } else {
     arrayUser.push(numUser);
+    score += 1;
   }
 
 }
 console.log(arrayUser);
+console.log('score: ', score);
