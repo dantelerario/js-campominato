@@ -16,8 +16,8 @@ var score = 0;
 var difficulty;
 
 difficulty = prompt('Scegli la difficoltà\nNormal\nNightmare\nHell')
-                .trim()
-                .toLowerCase();
+            .trim()
+            .toLowerCase();
 
 for (var i = 0; i < 16; i++) {
   switch (difficulty) {
@@ -85,8 +85,8 @@ for (var i = 0; i < 84; i++) {
     arrayUser.push(numUser);
     score += 1;
   }
-
 }
+
 console.log(arrayUser);
 console.log('score: ', score);
 alert('Hai totalizzato ' + score + ' punti.')
