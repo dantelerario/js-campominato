@@ -20,7 +20,7 @@ for (var i = 0; i < 16; i++) {
 }
 console.log(array16);
 
-for (var i = 0; i < 5; i++) {
+for (var i = 0; i < 100; i++) {
   numUser = parseInt( prompt('Inserisci un numero'));
   if (numUser < 1 || numUser > 100) {
     alert('Non puoi inserire un numero maggiore di 100 o minore di 1');
