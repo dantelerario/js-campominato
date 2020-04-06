@@ -13,14 +13,64 @@ var array16 = [];
 var numUser = [];
 var arrayUser = [];
 var score = 0;
+var difficulty;
+
+difficulty = prompt('Scegli la difficoltà\nNormal\nNightmare\nHell')
+                .trim()
+                .toLowerCase();
 
 for (var i = 0; i < 16; i++) {
-  var numRandom = Math.floor( Math.random() * 100) + 1;
-  array16.push(numRandom);
+  switch (difficulty) {
+    case "normal":
+      var numRandom = Math.floor( Math.random() * 100) + 1;
+        if (array16.includes(numRandom)) {
+          i--; }
+        else {
+          array16.push(numRandom);
+        }
+      break;
+    case "nightmare":
+      var numRandom = Math.floor( Math.random() * 80) + 1;
+          if (array16.includes(numRandom)) {
+            i--; }
+          else {
+            array16.push(numRandom);
+          }
+      break;
+    case "hell":
+      var numRandom = Math.floor( Math.random() * 50) + 1;
+          if (array16.includes(numRandom)) {
+            i--; }
+          else {
+            array16.push(numRandom);
+          }
+      break;
+    default:
+      difficulty = false;
+  }
 }
+
+  // if (difficulty != 'normal' || difficulty != 'nightmare' || difficulty != 'hell') {
+  //   alert('Scegli una delle 3 difficoltà');
+  // }   else {
+  //     for (var i = 0; i < 16; i++) {
+  //         if (difficulty == nightmare) {
+  //         var numRandom = Math.floor( Math.random() * 80) + 1;
+  //         array16.push(numRandom);
+  //       } else if (difficulty == hell) {
+  //         var numRandom = Math.floor( Math.random() * 50) + 1;
+  //         array16.push(numRandom);
+  //       } else {
+  //         var numRandom = Math.floor( Math.random() * 100) + 1;
+  //         array16.push(numRandom);
+  //       }
+  //     }
+  //   }
+
+array16.sort();
 console.log(array16);
 
-for (var i = 0; i < 100; i++) {
+for (var i = 0; i < 84; i++) {
   numUser = parseInt( prompt('Inserisci un numero'));
   if (numUser < 1 || numUser > 100) {
     alert('Non puoi inserire un numero maggiore di 100 o minore di 1');
@@ -39,3 +89,4 @@ for (var i = 0; i < 100; i++) {
 }
 console.log(arrayUser);
 console.log('score: ', score);
+alert('Hai totalizzato ' + score + ' punti.')
