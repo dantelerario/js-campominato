@@ -9,6 +9,7 @@
 // con difficoltà 1 =>  tra 1 e 80
 // con difficoltà 2=> tra 1 e 50
 
+// VARS
 var array16 = []; //lista bombe
 var numUser = []; //numeri inseriti dall'User
 var arrayUser = []; //lista dei numeri inseriti dall'user
@@ -16,15 +17,21 @@ var score = 0; //counter punteggio
 var difficulty; //difficoltà
 var check1 = false;
 
-//Scelta difficoltà
+// Scelta difficoltà
+while (check1 == false) {
+  difficulty = diffChoice();
+  if (difficulty == "normal") {
+    check1 = true;
+  } else if (difficulty == "nightmare") {
+    check1 = true;
+  } else if (difficulty == "hell") {
+    check1 = true;
+  } else {
+    check1 = false;
+  }
+}
 
-difficulty = diffChoice();
-
-// difficulty = diffChoice();
-
-
-
-//Controllo difficoltà e creazione numeri
+// Controllo difficoltà e creazione numeri
 for (var i = 0; i < 16; i++) {
   switch (difficulty) {
     case "normal":
@@ -76,7 +83,7 @@ for (var i = 0; i < 16; i++) {
 array16.sort();
 console.log(array16);
 
-//Inserimento numero User e controllo
+// Inserimento numero User e controllo
 if (difficulty == "normal") {
   for (var i = 0; i < 84; i++) {
     numUser = parseInt( prompt('Inserisci un numero'));
