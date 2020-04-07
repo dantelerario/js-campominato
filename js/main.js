@@ -15,10 +15,12 @@ var arrayUser = [];
 var score = 0;
 var difficulty;
 
+//Scelta difficoltà
 difficulty = prompt('Scegli la difficoltà\nNormal\nNightmare\nHell')
             .trim()
             .toLowerCase();
 
+//Controllo difficoltà e creazione numeri
 for (var i = 0; i < 16; i++) {
   switch (difficulty) {
     case "normal":
@@ -69,7 +71,7 @@ for (var i = 0; i < 16; i++) {
 
 array16.sort();
 console.log(array16);
-
+//Inserimento numero User e controllo
 for (var i = 0; i < 84; i++) {
   numUser = parseInt( prompt('Inserisci un numero'));
   if (numUser < 1 || numUser > 100) {
