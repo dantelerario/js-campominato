@@ -63,23 +63,6 @@ for (var i = 0; i < 16; i++) {
   }
 }
 
-  // if (difficulty != 'normal' || difficulty != 'nightmare' || difficulty != 'hell') {
-  //   alert('Scegli una delle 3 difficoltà');
-  // }   else {
-  //     for (var i = 0; i < 16; i++) {
-  //         if (difficulty == nightmare) {
-  //         var numRandom = Math.floor( Math.random() * 80) + 1;
-  //         array16.push(numRandom);
-  //       } else if (difficulty == hell) {
-  //         var numRandom = Math.floor( Math.random() * 50) + 1;
-  //         array16.push(numRandom);
-  //       } else {
-  //         var numRandom = Math.floor( Math.random() * 100) + 1;
-  //         array16.push(numRandom);
-  //       }
-  //     }
-  //   }
-
 array16.sort();
 console.log(array16);
 
