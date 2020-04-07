@@ -87,8 +87,8 @@ console.log(array16);
 if (difficulty == "normal") {
   for (var i = 0; i < 84; i++) {
     numUser = parseInt( prompt('Inserisci un numero'));
-    if (numUser < 1 || numUser > 100) {
-      alert('Non puoi inserire un numero maggiore di 100 o minore di 1');
+    if (numUser < 1 || numUser > 100 || isNaN(numUser)) {
+      alert('Non puoi inserire un numero maggiore di 100 o minore di 1 o uno spazio vuoto');
       i--;
     } else if (arrayUser.includes(numUser)) {
       alert('Non puoi inserire lo stesso numero');
@@ -104,8 +104,8 @@ if (difficulty == "normal") {
 } else if (difficulty == "nightmare") {
   for (var i = 0; i < 84; i++) {
     numUser = parseInt( prompt('Inserisci un numero'));
-    if (numUser < 1 || numUser > 80) {
-      alert('Non puoi inserire un numero maggiore di 80 o minore di 1');
+    if (numUser < 1 || numUser > 80 || isNaN(numUser)) {
+      alert('Non puoi inserire un numero maggiore di 80 o minore di 1 o uno spazio vuoto');
       i--;
     } else if (arrayUser.includes(numUser)) {
       alert('Non puoi inserire lo stesso numero');
@@ -121,8 +121,8 @@ if (difficulty == "normal") {
 } else if (difficulty == "hell") {
   for (var i = 0; i < 84; i++) {
     numUser = parseInt( prompt('Inserisci un numero'));
-    if (numUser < 1 || numUser > 50) {
-      alert('Non puoi inserire un numero maggiore di 50 o minore di 1');
+    if (numUser < 1 || numUser > 50 || isNaN(numUser)) {
+      alert('Non puoi inserire un numero maggiore di 50 o minore di 1 o uno spazio vuoto');
       i--;
     } else if (arrayUser.includes(numUser)) {
       alert('Non puoi inserire lo stesso numero');
