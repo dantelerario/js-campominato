@@ -14,11 +14,15 @@ var numUser = []; //numeri inseriti dall'User
 var arrayUser = []; //lista dei numeri inseriti dall'user
 var score = 0; //counter punteggio
 var difficulty; //difficoltà
+var check1 = false;
 
 //Scelta difficoltà
-difficulty = prompt('Scegli la difficoltà\nNormal\nNightmare\nHell')
-            .trim()
-            .toLowerCase();
+
+difficulty = diffChoice();
+
+// difficulty = diffChoice();
+
+
 
 //Controllo difficoltà e creazione numeri
 for (var i = 0; i < 16; i++) {
@@ -73,24 +77,68 @@ array16.sort();
 console.log(array16);
 
 //Inserimento numero User e controllo
-for (var i = 0; i < 84; i++) {
-  numUser = parseInt( prompt('Inserisci un numero'));
-  if (numUser < 1 || numUser > 100) {
-    alert('Non puoi inserire un numero maggiore di 100 o minore di 1');
-    i--;
-  } else if (arrayUser.includes(numUser)) {
-    alert('Non puoi inserire lo stesso numero');
-    i--;
-  } else if (array16.includes(numUser)) {
-    alert('Hai perso');
-    break;
-  } else {
-    arrayUser.push(numUser);
-    score += 1;
+if (difficulty == "normal") {
+  for (var i = 0; i < 84; i++) {
+    numUser = parseInt( prompt('Inserisci un numero'));
+    if (numUser < 1 || numUser > 100) {
+      alert('Non puoi inserire un numero maggiore di 100 o minore di 1');
+      i--;
+    } else if (arrayUser.includes(numUser)) {
+      alert('Non puoi inserire lo stesso numero');
+      i--;
+    } else if (array16.includes(numUser)) {
+      alert('Hai perso');
+      break;
+    } else {
+      arrayUser.push(numUser);
+      score += 1;
+    }
   }
+} else if (difficulty == "nightmare") {
+  for (var i = 0; i < 84; i++) {
+    numUser = parseInt( prompt('Inserisci un numero'));
+    if (numUser < 1 || numUser > 80) {
+      alert('Non puoi inserire un numero maggiore di 80 o minore di 1');
+      i--;
+    } else if (arrayUser.includes(numUser)) {
+      alert('Non puoi inserire lo stesso numero');
+      i--;
+    } else if (array16.includes(numUser)) {
+      alert('Hai perso');
+      break;
+    } else {
+      arrayUser.push(numUser);
+      score += 1;
+    }
+  }
+} else if (difficulty == "hell") {
+  for (var i = 0; i < 84; i++) {
+    numUser = parseInt( prompt('Inserisci un numero'));
+    if (numUser < 1 || numUser > 50) {
+      alert('Non puoi inserire un numero maggiore di 50 o minore di 1');
+      i--;
+    } else if (arrayUser.includes(numUser)) {
+      alert('Non puoi inserire lo stesso numero');
+      i--;
+    } else if (array16.includes(numUser)) {
+      alert('Hai perso');
+      break;
+    } else {
+      arrayUser.push(numUser);
+      score += 1;
+    }
+  }
+} else {
+  difficulty = diffChoice();
 }
 
 console.log(arrayUser);
 console.log('score: ', score);
 
 alert('Hai totalizzato ' + score + ' punti.')
+
+// FUNCTIONS
+
+function diffChoice(difficolta) {
+  return difficulty = prompt('Scegli la difficoltà\nNormal\nNightmare\nHell').trim().toLowerCase();
+}
