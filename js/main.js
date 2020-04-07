@@ -9,11 +9,11 @@
 // con difficoltà 1 =>  tra 1 e 80
 // con difficoltà 2=> tra 1 e 50
 
-var array16 = [];
-var numUser = [];
-var arrayUser = [];
-var score = 0;
-var difficulty;
+var array16 = []; //lista bombe
+var numUser = []; //numeri inseriti dall'User
+var arrayUser = []; //lista dei numeri inseriti dall'user
+var score = 0; //counter punteggio
+var difficulty; //difficoltà
 
 //Scelta difficoltà
 difficulty = prompt('Scegli la difficoltà\nNormal\nNightmare\nHell')
@@ -71,6 +71,7 @@ for (var i = 0; i < 16; i++) {
 
 array16.sort();
 console.log(array16);
+
 //Inserimento numero User e controllo
 for (var i = 0; i < 84; i++) {
   numUser = parseInt( prompt('Inserisci un numero'));
@@ -91,4 +92,5 @@ for (var i = 0; i < 84; i++) {
 
 console.log(arrayUser);
 console.log('score: ', score);
+
 alert('Hai totalizzato ' + score + ' punti.')
